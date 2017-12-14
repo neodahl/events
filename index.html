@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>이벤트 작업 리스트</title>
+	<style type="text/css">
+		/*reset*/
+		li {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+		}
+
+		/*index style*/
+		main {
+			width: 80vw;
+			margin: 0 auto;
+			padding: 40px;
+		}
+		main > ul {
+			margin-top: 20px;
+			padding: 40px 30px;
+			background-color: #ececec;
+		}
+		main > ul li {
+			margin-bottom: 20px;
+		}
+		main > ul > li:before {
+			content: '▶';
+			margin-right: 4px;
+			vertical-align: top;
+		}
+		main > ul li a {
+			font-size: 20px;
+			color: #000;
+			font-weight: bold;
+		}
+		main > ul li a:hover {
+			text-decoration: underline;
+		}
+		main > ul li p {
+			color: #777;
+			padding-left: 26px;
+			margin: 0;
+		}
+		li ul {
+			padding: 15px;
+		}
+		li ul li {
+			margin-bottom: 5px;
+		}
+		li ul li:before {
+			content: '▷';
+			margin-right: 4px;
+		}
+		li ul li a {
+			font-size: 16px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<main>
+		<h1>이벤트 페이지</h1>
+
+		<ul>
+			<li>
+				<a href="july_event/index.html" target="_blank" title="새탭으로 페이지 이동">7월 이벤트 - PC ver.</a>
+				<p>룰렛 이벤트</p>
+			</li>
+			<li>
+				<a href="#" onClick="window.open('clueworks_event/html/index.html','KTH이벤트','width=360, height=700');" title="새창으로 페이지 열기">클루웍스 이벤트 - Mo ver.</a>
+				<p></p>
+			</li>
+			<li>
+				<a href="#" onClick="window.open('KTH_event/html/index.html','KTH이벤트','width=360, height=700');" title="새창으로 페이지 열기">KTH 이벤트 - Mo ver.</a>
+				<p>룰렛 이벤트</p>
+			</li>
+			<li>
+				<a href="picnic_event/index.html" target="_blank" title="새탭으로 페이지 이동">봄소풍 이벤트 - PC ver.</a>
+				<p>룰렛 이벤트</p>
+			</li>
+			<li>
+				<a href="#" onClick="window.open('win_go_mb/html/index.html','윈벤션고','width=360, height=700');" title="새창으로 페이지 열기">윈벤션고 이벤트 - Mo ver.</a>
+				<p>윈벤션고 이벤트</p>
+			</li>
+
+		</ul>
+	</main>
+
+</body>
+</html>

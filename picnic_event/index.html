@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="UTF-8">
+		<title>윈벤션으로 봄소풍 가자</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="css/style_pc.css">
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/Winwheel.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+	</head>
+	<body>
+		<div class="main_contents_area">
+			<div class="main_content">
+				<a href="" title="윈벤션으로 이동" class="go_winvention">
+					<img src="images/logo.png">
+				</a>
+				<h1>4월에는 윈벤션과 함께 봄소풍 가자!</h1>
+				<div class="roullet_btn_area">
+					<div class="left_btn">
+						<span>로그인 하고 룰렛 한번!</span>
+						<!-- 버튼에 inactive클래스 추가시 비활성화 스타일이 입혀집니다. -->
+						<a>윈벤션 로그인하기</a>
+					</div>
+					<div class="right_btn">
+						<span>친구에게 공유하고 한번 더!</span>
+						<!-- 버튼에 inactive클래스 추가시 비활성화 스타일이 입혀집니다. -->
+						<a class="inactive">이벤트 공유하기</a>
+					</div>
+				</div>
+			</div>
+			<!-- [Start] 룰렛 영역 -->
+			<div class="roullete_wrapper">
+				<!-- s :: 룰렛 게임 시작 -->
+				<div class="roulette_game_area">
+					<div class="spin_here">
+						<img src="images/stop_pointer.png" alt="바늘">
+					</div>
+					<div class="power_controls">
+						<img id="spin_button" src="images/btn_start.png" alt="룰렛 시작" onclick="startSpin();" class="spin_button">
+					</div>
+					<div class="wheel_border">
+						<img src="images/border.png">
+					</div>
+					<div width="438" height="582" align="center" valign="center">
+						<canvas id="canvas" width="670" height="670" class="canvas_wheel"></canvas>
+					</div>
+					<!-- 당첨 화면 -->
+					<div class="event_result_area" id="event_result_area"></div>
+				</div>
+				<!-- e :: 룰렛 게임 끝 -->
+			</div>
+			<!-- [End] 룰렛 영역 -->
+			<div class="gift_list_area">
+				<!-- p태그에 on 클래스 추가시 응모 완료레이블이 나타납니다 -->
+				<p class="gift01 on">1등 모두투어 30만원 여행 상품권 (1명)</p>
+				<p class="gift02">2등 버팔로 원터치 텐트 (2명)</p>
+				<p class="gift03">3등 광동 비타500 기프티콘 (500명)</p>
+				<div class="left_gifts">
+					<span class="text_mint">남은 수량</span>
+					<span class="count">500</span>
+				</div>
+			</div>
+		</div>
+		<div class="section02">
+			<div class="contents">
+				<h2>경품 당첨 시 연락 받으실 전화번호를 적어주세요.</h2>
+				<p>수정이 불가하오니 정확하게 입력해주시기 바랍니다.</p>
+				<div class="hp_input_area">
+					<label for="hp_input_txt" class="hp_input_txt on">-없이 숫자만 입력해 주세요.</label>
+					<input type="tel" id="hp_input_txt" name="hp_input_txt" class="hp_input" maxlength="11"><button type="button" class="btn_hp_confirm">등록하기</button>
+				</div>
+				<ul class="desc_txt">
+					<li>고객님의 개인정보는 개인정보보호법 및 정보통신망법에 따라 안전하게 보관되며,<br>경품 발송 완료 후 자동 파기됩니다.</li>
+					<li>고객님의 소중한 정보는 경품 발송 이외의 목적으로 사용되지 않습니다.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section03">
+			<div class="contents">
+				<h2>이벤트 <em>방법 및 내용</em></h2>
+				<div class="event_steps">
+					<p>step01 매일 로그인하면 기회 획득!</p>
+					<p>step02 획득한 기회로 룰렛 돌리기</p>
+					<p>step03 룰렛 결과에 따라 경품 당첨/응모</p>
+				</div>
+				<dl>
+					<dt class="label_mint">이벤트기간</dt>
+					<dd>2017.4. 3 - 4. 30</dd>
+					<dt class="label_mint">참여방법</dt>
+					<dd>
+					<ol>
+						<li>1. 윈벤션 로그인 시 참여 가능합니다.</li>
+						<li>2. 하루에 총 2번 참여 가능합니다.(로그인 1번, 페이스북 공유하기 1번)</li>
+						<li>3. 경품 당첨 및 응모를 위한 참여는 매일 가능하며, 이벤트 기간 동안 ID당 3등 당첨은 1회, 2등, 3등 응모는 각각 1회 가능합니다.</li>
+					</ol>
+					</dd>
+					<dt class="label_pink">경품 안내</dt>
+					<dd>
+					<ul>
+						<li><span>1등</span>: 모두투어30만원 여행 상품권 (1명 추첨)</li>
+						<li><span>2등</span>: 버팔로 원터치 텐트 (2명 추첨)</li>
+						<li><span>3등</span>: CU(훼미리마트) 광동 비타500 100ml 기프티콘 (500명 선착순)</li>
+					</ul>
+					</dd>
+					<dt class="label_pink">당첨자 발표</dt>
+					<dd>2017. 5. 4 윈벤션 페이스북</dd>
+					<dt class="label_pink">당첨자 발표</dt>
+					<dd>CU(훼미리마트) 광동 비타 500 100ml 기프티콘 2017. 5. 9 발송 텐트, 여행상품권 별도 고지</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="section04">
+			<div class="contents">
+				<h2>유의 사항</h2>
+				<ul class="desc_txt">
+					<li>해당 이벤트는 ID당 1일 1회 참여 가능 합니다. (룰렛은 총 2번 참여 가능)</li>
+					<li>해당 이벤트는 로그인 후 참여 가능하며, PC와 모바일 중 한 번만 가능합니다.</li>
+					<li>돌림판을 돌릴 수 있는 횟수는 매일 초기화 됩니다.</li>
+					<li>추첨 경품(1등, 2등)의 세부 사항은 업체 사정에 따라 별도 고지 없이 변경될 수 있습니다.</li>
+					<li>당첨자는 2017년 5월 2일 윈벤션 페이스북에서 확인 가능합니다. (https://www.facebook.com/winvention)</li>
+					<li>회원 정보 내 성함, 휴대폰번호를 기재하지 않으면 이벤트 참여가 불가능합니다.</li>
+					<li>회원 정보 내 개인 정보가 불확실할 경우 경품 수령이 불가능 할 수 있습니다.</li>
+					<li>핸드폰 번호는 총 1회만 등록 가능합니다.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="section05">
+			<h2>윈벤션에서만 볼 수 있는 특별한 콘텐츠!</h2>
+			<div class="go_to_sepcific">
+				<a href="" title="테마관 페이지 이동">
+					<img src="images/go_theme.png" alt="테마관 이미지">
+				</a>
+				<a href="" title="윈벤션 오리지널 페이지 이동">
+					<img src="images/go_original.png" alt="윈벤션 오리지널 이미지">
+				</a>
+				<a href="" title="윈벤션 웹툰 페이지 이동">
+					<img src="images/go_webtoon.png" alt="윈벤션 웹툰 이미지">
+				</a>
+			</div>
+		</div>
+		<!-- [Start] 이벤트 종료시 -->
+		<!-- 이벤트 종료시 div.event_closed_wrapper에 on 클래스를 추가해시면 됩니다 -->
+		<div class="event_closed_wrapper">
+			<div class="event_closed">
+				<p>죄송합니다. 종료된 이벤트 입니다.</p>
+			</div>
+		</div>
+		<!-- [End] 이벤트 종료시 -->
+		<script type="text/javascript">
+			var doc = document;
+			var event_result_area = doc.getElementById('event_result_area');
+			// 객체생성
+			var theWheel = new Winwheel({
+			'numSegments'  : 8,     // 룰렛 이벤트 갯수 설정
+			'outerRadius'  : 212,   // 이벤트 바깥 라인 radius 디자인에 따라 설정 변경 가능
+			'textFontSize' : 13,    // 폰트 사이즈 설정
+			'drawMode'     : 'segmentImage',
+			'segments'     :        // 개체 설정
+			[
+			{'strokeStyle' : '#fff' ,'image' : 'images/01.png', 'text' : '여행상품권 응모권'},
+			{'strokeStyle' : '#fff' ,'image' : 'images/02.png', 'text' : '한번 더'},
+			{'strokeStyle' : '#fff' ,'image' : 'images/03.png', 'text' : '원터치 텐트 응모권'},
+			{'strokeStyle' : '#fff' ,'image' : 'images/04.png', 'text' : '다음 기회에'},
+			{'strokeStyle' : '#fff' ,'image' : 'images/05.png', 'text' : '비타500'},
+			{'strokeStyle' : '#fff' ,'image' : 'images/06.png', 'text' : '한번 더'},
+			{'strokeStyle' : '#fff' ,'image' : 'images/07.png', 'text' : '비타500'},
+			{'strokeStyle' : '#fff' ,'image' : 'images/08.png', 'text' : '다음 기회에'}
+			],
+			'animation' :           // 애니메이션 스펙 설정
+			{
+			'type'     : 'spinToStop',
+			'duration' : 5,     // 시간 설정 (second)
+			'spins'    : 8,     // 스핀 수
+			'callbackFinished' : 'popupDuration()' //alert 설정
+			}
+			});
+			//초기화 변수
+			var wheelPower    = 0;
+			var wheelSpinning = false;
+			// -------------------------------------------------------
+			// 이벤트 호출
+			// -------------------------------------------------------
+			function startSpin() {
+			//  회전중일때 다시 클릭할 수 없게 하도록 false를 줌
+			if (wheelSpinning == false){
+				if (wheelPower == 1){
+					theWheel.animation.spins = 3;
+				} else if (wheelPower == 2){
+					theWheel.animation.spins = 8;
+				} else if (wheelPower == 3){
+					theWheel.animation.spins = 15;
+				}
+				// 스핀이 도는 동안 다시 클릭 할 수 없도록 비활성화.
+				// document.getElementById('spin_button').src       = "spin_off.png";
+				document.getElementById('spin_button').className = "";
+				// 애니메이션 호출
+				theWheel.startAnimation();
+				//스핀을 재 설정을 위한 변수
+				wheelSpinning = true;
+				}
+			}
+			// -------------------------------------------------------
+			// 매개 변수에서 콜백을 지정했기 때문에 휠의 콜백 기능으로 스핀 애니메이션이 완료되면 호출됨
+			// -------------------------------------------------------
+			function alertPrize(){
+				// 세그먼트 호출
+				var winningSegment = theWheel.getIndicatedSegment();
+				// alert(winningSegment.text);
+				var event_result01 = "" ;
+					 event_result01 += "<img src='images/travel.png' alt='여행상품권' class='travel'>";
+					 event_result01 += "<p class='event_result_txt'><em>여행상품권에 응모 됐습니다.</em><br>행운을 빕니다~!</p>";
+					 event_result01 += "<div class='btn_event_area'><button type='button' class='btn_event_ok' id='btn_result_ok'>확인</button></div>";
+				var event_result02 = "";
+					 event_result02 += "<p class='event_result_txt one_more'>운이 아주 없지는 않네..<br><em>한번 더~!<br>돌림판을 돌려보세요!</em></p>"
+					 event_result02 += "<div class='btn_event_area'><button type='button' class='btn_event_ok' id='btn_result_ok'>확인</button></div>"
+				var event_result03 = "";
+					 event_result03 += "<img src='images/tent.png' alt='텐트' class='tent'>";
+					 event_result03 += "<p class='event_result_txt'><em>원터치 텐트에 응모 됐습니다.</em><br>행운을 빕니다~!</p>"
+					 event_result03 += "<div class='btn_event_area'><button type='button' class='btn_event_ok' id='btn_result_ok'>확인</button></div>"
+				var event_result04 = "";
+					 event_result04 += "<img src='images/next_time.png' alt='ㅠㅡㅠ' class='next_time'>";
+					 event_result04 += "<p class='event_result_txt'><em>내일 다시 도전해 보게..</em></p>"
+					 event_result04 += "<div class='btn_event_area'><button type='button' class='btn_event_ok' id='btn_result_ok'>확인</button></div>"
+				var event_result05 = "";
+					 event_result05 += "<img src='images/vita.png' alt='비타500' class='vita'>";
+					 event_result05 += "<p class='event_result_txt'><em>비타500에 당첨되었습니다.</em><br>핸드폰 번호 등록 잊지 마세요~!</p>"
+					 event_result05 += "<div class='btn_event_area'><button type='button' class='btn_event_ok' id='btn_result_ok'>확인</button></div>"
+				if (winningSegment.text == '여행상품권 응모권'){
+					event_result_area.className = "event_result_area on";
+					event_result_area.innerHTML = event_result01;
+				} else if (winningSegment.text == '한번 더') {
+					event_result_area.className = "event_result_area on";
+					event_result_area.innerHTML = event_result02;
+				} else if (winningSegment.text == '원터치 텐트 응모권'){
+					event_result_area.className = "event_result_area on";
+					event_result_area.innerHTML = event_result03;
+				} else if (winningSegment.text == '다음 기회에'){
+					event_result_area.className = "event_result_area on";
+					event_result_area.innerHTML = event_result04;
+				} else if (winningSegment.text == '비타500'){
+					event_result_area.className = "event_result_area on";
+					event_result_area.innerHTML = event_result05;
+				}
+				var btn_result_ok = doc.getElementById('btn_result_ok');
+
+				btn_result_ok.onclick = function(){
+					event_result_area.className = "event_result_area";
+					resetWheel();
+				}
+			}
+			// 상품 호출 타임아웃 지정
+			function popupDuration() {
+				setTimeout(alertPrize, 300);
+			}
+			// -------------------------------------------------------
+			// reset button.
+			// -------------------------------------------------------
+			function resetWheel(){
+				theWheel.stopAnimation(false);  // 애니메이션 멈춤
+				theWheel.rotationAngle = 0;     // 휠 각도를 다시 0으로 맞춤
+				theWheel.draw();                //
+				wheelSpinning = false;          // 전원 버튼을 false로 재 설정하면 스핀을 다시 클릭 할 수 있음
+			}
+			/* 인풋요소 */
+			var hp_input_txt = doc.getElementById('hp_input_txt');
+
+			hp_input_txt.onfocus = function(){
+				var label_txt = doc.querySelector('.hp_input_area label');
+				label_txt.className = "hp_input_txt";
+			}
+			hp_input_txt.onblur = function(){
+				var txtBox = doc.querySelector('.hp_input');
+				var label_txt = doc.querySelector('.hp_input_area label');
+				if(txtBox.value == ''){
+					label_txt.className = "hp_input_txt on";
+				} else {
+					label_txt.className = "hp_input_txt";
+				}
+			}
+		</script>
+	</body>
+</html>

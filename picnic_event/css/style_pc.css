@@ -1,0 +1,482 @@
+@charset "utf-8";
+
+/****************************************/
+/*	Name: 윈벤션 봄소풍 이벤트
+/*	PART: reset STYLE
+/*	Version: 1.0
+/*	Author: winvention UI개발팀
+/****************************************/
+/*resets*/
+html {margin:0;padding:0; font-size:100%;}
+body {margin:0; padding:0;font-family:'openSans-Regular','맑은 고딕',Malgun Gothic,'돋움',Dotum,AppleGothic,sans-serif;line-height:1.5; color:#292a37;letter-spacing:0;-webkit-text-size-adjust:none;}
+div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td,button,textarea,select {margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6{font-weight:normal}
+img {border:0;vertical-align:top;}
+ul,ol,dl,dt,dd,li {list-style:none;}
+table, th, td {border-collapse:collapse;border-spacing:0;font-weight: normal;}
+caption {display:block;text-indent:-9999em;overflow:hidden;height:0;font-size:0;line-height:0;}
+fieldset, blockquote, iframe, button {border:none;}
+i, em, u, cite {font-style:normal;}
+strong,em, b {font-weight:normal;}
+a {color:#292a37;text-decoration:none;}
+button {background:transparent;cursor:pointer;vertical-align:middle;margin:0;}
+button,input[type="submit"], input[type="button"], input[type="reset"] {cursor:pointer;-webkit-appearance:none;}
+section, nav, article, aside, header, footer, main {display:block;}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button {display:none;}
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="password"]{-webkit-appearance:none;border-radius:0}
+select, textarea, button {webkit-appearance: none;border-radius: 0}
+input[type="text"],input[type="search"] {-webkit-appearance:none; border-radius: 0}
+
+/*styles*/
+.main_contents_area {
+	width: 100%;
+	height: 1530px;
+	background: url("../images/main_bg.png") center center no-repeat;
+	background-size: cover;
+}
+.main_content {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 120px;
+}
+.go_winvention {
+	display: block;
+	position: absolute;
+	top: 42px;
+	left: 0;
+}
+
+.main_content h1 {
+	width: 623px;
+	height: 207px;
+	margin: 0 auto 40px;
+	background: url("../images/title.png") center center no-repeat;
+	font-size: 0;
+}
+
+.roullet_btn_area {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 0;
+}
+.roullet_btn_area a {
+	cursor: pointer;
+}
+.roullet_btn_area .left_btn {
+	display: inline-block;
+	width: 300px;
+	margin-right: 33px;
+}
+.roullet_btn_area .left_btn span {
+	display: block;
+	width: 176px;
+	height: 20px;
+	margin: 0 auto 10px;
+	background: url("../images/login_text.png") center center no-repeat;
+	font-size: 0;
+}
+.roullet_btn_area .left_btn a {
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+	background: url("../images/btn_login.png") center center no-repeat;
+}
+.roullet_btn_area .left_btn a.inactive {
+	background: url("../images/btn_login_inactive.png") center center no-repeat;
+}
+.roullet_btn_area .right_btn {
+	display: inline-block;
+	width: 300px;
+}
+.roullet_btn_area .right_btn span {
+	display: block;
+	width: 209px;
+	height: 20px;
+	margin: 0 auto 10px;
+	background: url("../images/share_text.png") center center no-repeat;
+	font-size: 0;
+}
+.roullet_btn_area .right_btn a {
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+	background: url("../images/btn_share.png") center center no-repeat;
+}
+.roullet_btn_area .right_btn a.inactive {
+	background: url("../images/btn_share_inactive.png") center center no-repeat;
+}
+
+/*[Start] 룰렛*/
+.roullete_wrapper {
+	width: 1000px;
+	margin:0 auto 50px;
+}
+.roulette_game_area {
+	position: relative;
+	padding-top: 20px;
+}
+.wheel_border {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	margin-left: -335px;
+	width: 670px;
+	height: 670px;
+}
+.power_controls {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -87px;
+	margin-top: -87px;
+	z-index: 1;
+}
+.spin_here {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	margin-left: -42px;
+	z-index: 10;
+}
+.event_result_area {
+	position: absolute;
+	left: 190px;
+	top: 47px;
+	background: url("../images/round_result_bg.png") center center no-repeat;
+	background-size: contain;
+	width: 615px;
+	height: 615px;
+	text-align: center;
+	display: none;
+	z-index: 1;
+}
+.event_result_area.on {
+	display: block;
+}
+.event_result_txt {
+	font-size: 30px;
+	letter-spacing: -2px;
+	margin-top: 10px;
+	color: #ab0667;
+}
+.event_result_txt em {
+	font-size: 42px;
+	font-weight: bold;
+}
+.event_result_area img.travel {
+	margin-top: 137px;
+}
+.event_result_area img.tent {
+	margin-top: 90px;
+}
+.event_result_area img.vita {
+	margin-top: 90px;
+}
+.event_result_area img.next_time {
+	margin-top: 165px;
+}
+.event_result_area .one_more {
+	margin-top: 180px;
+}
+.btn_event_area {
+	text-align: center;
+	margin-top: 50px;
+}
+.btn_event_ok {
+	display: inline-block;
+	background: #222;
+	border-radius: 35px;
+	padding: 19px 66px;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+}
+.power_controls:hover {
+	cursor: pointer;
+}
+/*[End] 룰렛*/
+
+
+
+
+.gift_list_area {
+	position: relative;
+	width: 670px;
+	height: 255px;
+	margin: 0 auto;
+	font-size: 0;
+}
+.gift_list_area p {
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 255px;
+	margin-right: 35px;
+}
+.gift_list_area p.on:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	display: block;
+	width: 192px;
+	height: 192px;
+	background: url("../images/completed.png") center center no-repeat;
+	background-size: contain;
+}
+.gift_list_area p:last-of-type {
+	margin-right: 0;
+}
+.gift_list_area .gift01 {
+	background: url("../images/gift01.png") center center no-repeat;
+	background-size: contain;
+}
+.gift_list_area .gift02 {
+	background: url("../images/gift02.png") center center no-repeat;
+	background-size: contain;
+}
+.gift_list_area .gift03 {
+	background: url("../images/gift03.png") center center no-repeat;
+	background-size: contain;
+}
+.left_gifts {
+	position: absolute;
+	top: 0;
+	right: -140px;
+	width: 136px;
+	height: 100px;
+	background: url("../images/text_balloon.png") center center no-repeat;
+	background-size: contain;
+}
+.left_gifts .text_mint {
+	display: block;
+	margin-top: 14px;
+	margin-left: 31px;
+	font-size: 20px;
+	color: #69e1ff;
+}
+.left_gifts .count {
+	display: block;
+	font-size: 40px;
+	color: #fff;
+	line-height: 1;
+	text-align:  center;
+	margin-left: 14px;
+}
+
+.section02 {
+	padding: 56px 0 50px;
+	background: #ef8ba5;
+}
+.section02 .contents {
+	width: 670px;
+	margin: 0 auto;
+	text-align: center;
+}
+.section02 h2 {
+	width: 559px;
+	height: 28px;
+	background: url("../images/section02_title.png") center center no-repeat;
+	background-size: contain;
+	font-size: 0;
+	margin: 0 auto 10px;
+}
+.section02 h2+p {
+	font-size: 16px;
+	letter-spacing: -1px;
+	margin-bottom: 20px;
+}
+
+
+/*인풋*/
+.hp_input_area {
+	position: relative;
+	text-align: left;
+	width: 670px;
+	height: 70px;
+	margin-bottom: 20px;
+}
+.hp_input {
+	width: 510px;
+	height: 64px;
+	border: 3px solid #222;
+	border-radius: 35px !important;
+	font-size: 24px;
+	text-align: center;
+}
+.hp_input_txt {
+	display: none;
+	position: absolute;
+	top: 17px;
+	left: 24px;
+	color: #999;
+	font-size: 24px;
+}
+.hp_input_txt.on {
+	display: block;
+}
+.btn_hp_confirm {
+	position: absolute;
+	top: 0;
+	right: -6px;
+	display: inline-block;
+	width: 240px;
+	height: 70px;
+	background: #222;
+	color: #fff;
+	font-size: 24px;
+	border-radius: 35px;
+}
+.hp_con_txt {
+	margin-top: 15px;
+	color: #fff;
+	font-size: 14px;
+	padding-left: 85px;
+}
+
+.desc_txt li {
+	position: relative;
+	margin-bottom: 5px;
+	padding-left: 9px;
+	font-size: 16px;
+	text-align: left;
+}
+.desc_txt li:last-of-type {
+	margin-bottom: 0;
+}
+.desc_txt li:before {
+	content:'';
+	width: 2px;
+	height: 2px;
+	background: #000;
+	position: absolute;
+	top: 11px;
+	left: 0;
+	display: inline-block;
+}
+
+.section03 {
+	padding: 100px 0 50px;
+	background: #40d4ff;
+}
+.section03 .contents {
+	width: 670px;
+	margin: 0 auto;
+}
+.section03 h2 {
+	width: 412px;
+	height: 56px;
+	background: url("../images/section03_title.png") center center no-repeat;
+	background-size: contain;
+	font-size: 0;
+	margin: 0 auto 20px;
+}
+.section03 h2 em {
+	font-weight: bold;
+}
+.event_steps {
+	width: 670px;
+	height: 180px;
+	background: url("../images/event_step.png") center center no-repeat;
+	background-size: contain;
+	font-size: 0;
+	margin-bottom: 50px;
+}
+.section03 dl {
+	width: 670px;
+	height: 430px;
+	background: url("../images/event_info.png") center center no-repeat;
+	background-size: contain;
+	font-size: 0;
+}
+
+.section04 {
+	padding: 50px 0 50px 140px;
+	background: #18a9d3;
+
+}
+.section04 .contents {
+	width: 1000px;
+	margin:0 auto;
+	color: #fff;
+}
+.section04 .contents:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.section04 h2 {
+	display: inline-block;
+	float: left;
+	margin-right: 67px;
+}
+.section04 .desc_txt {
+	display: inline-block;
+	float: left;
+}
+.section04 .desc_txt li:before {
+	background: #fff;
+}
+
+.section05 {
+	padding: 100px 0 120px;
+}
+.section05 h2 {
+	width: 850px;
+	height: 52px;
+	margin:0 auto 20px;
+	background: url("../images/only_winvention.png") center center no-repeat;
+	background-size: contain;
+	font-size: 0;
+}
+.go_to_sepcific {
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 0;
+}
+.go_to_sepcific a {
+	display: inline-block;
+	margin-right: 20px;
+}
+.go_to_sepcific a:last-of-type {
+	margin-right: 0;
+}
+.go_to_sepcific a img {
+	width: 320px;
+	height: 150px;
+}
+
+
+
+/*이벤트 종료시*/
+.event_closed_wrapper {
+	position: fixed;
+	top:0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	z-index: 99;
+}
+.event_closed_wrapper.on {
+	display: block;
+}
+.event_closed {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 300px;
+	margin-top: -150px;
+	margin-left: -150px;
+	background: url("../images/event_closed.png") center center no-repeat;
+	background-size: contain;
+	font-size: 0;
+	z-index: 100;
+}

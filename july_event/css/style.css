@@ -1,0 +1,548 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'notoR';
+  font-weight: normal;
+  font-style: normal;
+  src: local("※");
+  src: url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+/****************************************/
+/*  Name: 윈벤션 7월 이벤트
+/*  PART: reset STYLE
+/*  Version: 1.0
+/*  Author: winvention UI개발팀
+/****************************************/
+
+/*resets*/
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'notoR', '맑은 고딕', Malgun Gothic, '돋움', Dotum, AppleGothic, sans-serif;
+  line-height: 1.5;
+  color: #292a37;
+  letter-spacing: 0;
+  -webkit-text-size-adjust: none;
+}
+div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, form, fieldset, input, table, tr, th, td, button, textarea, select {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal
+}
+img {
+  border: 0;
+  vertical-align: top;
+}
+ul, ol, dl, dt, dd, li {
+  list-style: none;
+}
+table, th, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-weight: normal;
+}
+caption {
+  display: block;
+  text-indent: -9999em;
+  overflow: hidden;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+fieldset, blockquote, iframe, button {
+  border: none;
+}
+i, em, u, cite {
+  font-style: normal;
+}
+strong, em, b {
+  font-weight: normal;
+}
+a {
+  color: #292a37;
+  text-decoration: none;
+}
+button {
+  background: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 0;
+}
+button, input[type="submit"], input[type="button"], input[type="reset"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+section, nav, article, aside, header, footer, main {
+  display: block;
+}
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="text"], input[type="search"], input[type="tel"], input[type="number"], input[type="password"] {
+  -webkit-appearance: none;
+  border-radius: 0
+}
+select, textarea, button {
+  webkit-appearance: none;
+  border-radius: 0
+}
+input[type="text"], input[type="search"] {
+  -webkit-appearance: none;
+  border-radius: 0
+}
+
+/*style*/
+.header {
+  margin-bottom: 77px;
+  width: 100%;
+  height: 658px;
+  background: url("../images/bg_header.png") center center no-repeat;
+}
+.header .content {
+  position: relative;
+  width: 900px;
+  height: 658px;
+  margin: 0 auto;
+  text-align: center;
+  background: url("../images/header_inner.png") center center no-repeat;
+}
+.header h1, .header p {
+  font-size: 0;
+}
+.header em {
+  position: absolute;
+  bottom: 137px;
+  display: block;
+  width: 100%;
+  color: #006033;
+  font-size: 24px;
+}
+.winvention {
+  position: absolute;
+  top: 20px;
+  left: 1px;
+  display: inline-block;
+  width: 143px;
+  height: 28px;
+  font-size: 0;
+  background: url("../images/winvention.png") center center no-repeat;
+  background-size: contain;
+}
+.section {
+  width: 900px;
+  margin: 0 auto;
+}
+.section.n01 {
+  padding-bottom: 100px;
+}
+.section.n02 {
+  width: 100%;
+  padding: 50px 0 150px;
+  background: #e9fcf6 url("../images/bg_section02.png") center center no-repeat;
+  background-size: cover;
+}
+.section.n03 {
+  width: 100%;
+  padding-bottom: 100px;
+  background: #149f5c;
+}
+.section.n04 {
+  width: 100%;
+  padding: 48px 0 90px;
+  background-color: #eeeeee;
+}
+.section .section_container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+/*[Start] 룰렛*/
+.roullete_wrapper {
+  margin: 0 auto;
+}
+.roulette_game_area {
+  position: relative;
+}
+.wheel_border {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -455px;
+  width: 910px;
+  height: 600px;
+  z-index: 2;
+}
+.wheel_border img {
+  width: 100%;
+}
+.power_controls {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+.power_controls:hover {
+  cursor: pointer;
+}
+.power_controls img {
+  border-radius: 50%;
+}
+
+/*이벤트 결과 팝업*/
+.event_result_area {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 10;
+}
+.event_result_area.on {
+  display: block;
+}
+.event_result_area img {
+  width: 100%;
+  height: 100%;
+}
+.event_result_area .btn_result_area {
+  position: absolute;
+  bottom: 60px;
+  left: 202px;
+}
+.event_result_area .btn_result_area button {
+  width: 200px;
+  height: 60px;
+  font-size: 0;
+  color: transparent;
+  background-color: transparent;
+}
+
+/*[End] 룰렛*/
+.chance_area {
+  margin-bottom: 150px;
+  text-align: center;
+}
+.cross_line {
+  position: relative;
+  width: 100%;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.cross_line:after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  z-index: -1;
+}
+.cross_line em {
+  display: inline-block;
+  background: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 0 15px;
+}
+.cross_line em span {
+  color: #ff00ff;
+}
+.n01 .cross_line + p {
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #666666;
+}
+.btn_area > a {
+  display: inline-block;
+  width: 300px;
+  height: 70px;
+  line-height: 70px;
+  margin-right: 20px;
+  border-radius: 35px;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+}
+.btn_area > a:last-of-type {
+  margin-right: 0;
+}
+.btn_area > a span:after {
+  content: '';
+  display: inline-block;
+  margin-left: 20px;
+  width: 10px;
+  height: 20px;
+  background: url("../images/btn_arrow.png") center center no-repeat;
+}
+.btn_login {
+  background-color: #32363d;
+}
+.btn_login.on {
+  background-color: #afb2c0;
+}
+.btn_login.on span:after {
+  display: none;
+}
+.btn_fb_share {
+  background-color: #375591;
+}
+.btn_area .btn_fb_share span:before {
+  content: '';
+  display: inline-block;
+  margin-right: 8px;
+  width: 14px;
+  height: 26px;
+  background: url("../images/ico_facebook.png") center center no-repeat;
+  vertical-align: top;
+  margin-top: 24px;
+}
+.phone_registraion {
+  text-align: center;
+}
+.category_tit {
+  font-size: 0;
+  display: block;
+  margin: 0 auto 50px;
+  vertical-align: top;
+}
+.category_tit.regist_phone {
+  width: 329px;
+  height: 62px;
+  background: url("../images/tit_phone.png") center center no-repeat;
+  background-size: contain;
+}
+.category_tit.participation {
+  width: 211px;
+  height: 62px;
+  background: url("../images/tit_participation.png") center center no-repeat;
+  background-size: contain;
+}
+.category_tit.gifts {
+  width: 141px;
+  height: 62px;
+  background: url("../images/tit_gifts.png") center center no-repeat;
+  background-size: contain;
+}
+.phone_registraion p {
+  margin-bottom: 20px;
+  color: #32363d;
+  font-size: 26px;
+}
+.input_phone {
+  position: relative;
+  width: 750px;
+  height: 70px;
+  margin: 0 auto;
+  border: 3px solid #32363d;
+  border-radius: 35px;
+  box-sizing: border-box;
+}
+.input_phone input {
+  height: 64px;
+  line-height: 64px;
+  width: 490px;
+  margin-left: -190px;
+  font-size: 26px;
+  text-align: center;
+  border: none;
+}
+.input_phone input::placeholder {
+  font: 26px;
+  color: #cccccc;
+  text-align: left;
+}
+.input_phone input + label {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  overflow: hidden;
+}
+.input_phone button {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 228px;
+  height: 70px;
+  background-color: #32363d;
+  color: #fff;
+  border-radius: 32px;
+  font-size: 26px;
+}
+.event_participaition ol {
+  font-size: 0;
+  width: 872px;
+  height: 218px;
+  margin: 0 auto 150px;
+  background: url("../images/how_to_participation.png") center center no-repeat;
+  background-size: contain;
+}
+.event_gifts {
+  text-align: center;
+}
+.event_gifts img {
+  margin-left: 90px;
+}
+.tab_wrapper {
+  background: #00bb61;
+}
+.tab_btn_container {
+  width: 900px;
+  margin: 0 auto;
+}
+.tab_contents_wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+.tab_btn_container {
+  padding: 17px 0;
+}
+.tab_btn_container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.tab_btn_container button {
+  position: relative;
+  float: left;
+  margin-right: 25px;
+  width: 200px;
+  height: 46px;
+  font-size: 30px;
+  color: #8ae0b7;
+  letter-spacing: -3px;
+  outline: none;
+}
+.tab_btn_container button:before {
+  content: '';
+  position: absolute;
+  top: 11px;
+  left: 0;
+  display: inline-block;
+  width: 1px;
+  height: 30px;
+  background-color: #40de92;
+}
+.tab_btn_container button:first-of-type:before {
+  display: none;
+}
+.tab_btn_container button.on {
+  color: #ffff00;
+}
+.tab_btn_container button.on:after {
+  content: '';
+  position: absolute;
+  left: 66px;
+  bottom: -40px;
+  display: inline-block;
+  width: 51px;
+  height: 24px;
+  background: url("../images/tab_on.png") center center no-repeat;
+  background-size: contain;
+}
+.tab_content {
+  display: none;
+  text-align: center;
+}
+.tab_content.on {
+  display: block;
+}
+.tit_movie_category {
+  display: block;
+  margin: 45px 0 47px;
+  font-size: 40px;
+  text-align: center;
+  color: #ffff00;
+  border-bottom: 3px solid #ffff00;
+  letter-spacing: -2px;
+}
+.movie_category {
+  display: inline-block;
+}
+.movie_category:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.movie_category li {
+  float: left;
+  display: inline-block;
+  margin-right: 30px;
+  text-align: center;
+}
+.movie_category li:last-of-type {
+  margin-right: 0;
+}
+.poster_area {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+.poster_area .label_free {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  display: inline-block;
+  width: 69px;
+  height: 69px;
+  line-height: 69px;
+  border-radius: 50%;
+  font-size: 26px;
+  color: #fff;
+  background-color: #ff00ff;
+}
+.poster_area img {
+  width: 195px;
+  height: 276px;
+}
+.btn_movie_link {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 26px;
+  color: #fff;
+  background-color: #1db86d;
+  border-radius: 25px;
+}
+.event_info:first-of-type {
+  margin-bottom: 40px;
+}
+.event_info .tit_event_info {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #32363d;
+}
+.desc_txt li {
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 11px;
+  font-size: 16px;
+  color: #666666;
+}
+.desc_txt li:last-of-type {
+  margin-bottom: 0;
+}
+.desc_txt li:before {
+  content: '.';
+  position: absolute;
+  top: -5px;
+  left: 0;
+}

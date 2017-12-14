@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimumscale=1.0">
+	<title>윈벤션에서 500만원 괌 여행권 잡아라!</title>
+	<link rel="stylesheet" href="../css/style_mo.css">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/Winwheel.js"></script>
+	<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="main_visual">
+			<h1>let's go Guam 괌 여행을 잡아라</h1>
+			<p>윈벤션 영화관 오픈 기념 이벤트</p>
+			<span class="period">5.15 - 6.11</span>
+		</div>
+		<nav class="scrollNav">
+			<ul class="nav_list">
+				<li><a href="#">대박경품</a></li>
+				<li><a href="#">캐시백</a></li>
+				<li><a href="#">무료영화</a></li>
+				<li><a href="#">매일룰렛</a></li>
+			</ul>
+		</nav>
+		<a href="http://www.winvetion.com" title="윈벤션으로 이동" class="logo">윈벤션</a>
+	</header>
+	<div class="event n01 navPosition01">
+		<h2>투표만 해도 대박 경품</h2>
+		<p>추천 · 보고싶은 영화에 투표하세요</p>
+		<div class="section01">
+			<h3 class="cross_line"><span class="circle_num">1</span>최고의 영화를 찾아라!</h3>
+			<div class="gift_img">
+				<img src="../images/gift_best_movie.png" alt="500만원 여행상품권 1명 300만원 하이마트 상퀌품권 1명 뉴맥북 1명">
+			</div>
+			<p>매 주 최다득표 영화에 투표하신 분들 중<br> 추첨을 통해 대박경품을 드립니다.</p>
+			<p class="desc_light">
+				최다 득표 영화를 맞추면 맞출수록 확률이 <span class="f-blue">UP!</span><br>
+				페이스북에 이벤트를 공유하면 확률이 더욱 <span class="f-blue">UP! UP!</span>
+			</p>
+		</div>
+		<div class="section02">
+			<h3 class="cross_line"><span class="circle_num">2</span>투표만 해도 터진다!</h3>
+			<div class="gift_img">
+				<img src="../images/gift_coupon.png" alt="도미노피자 베스킨라빈스 편의점 쿠폰">
+			</div>
+			<p>매 주! 투표에 참여하신 분들 중 추첨을 통해<br> 도미노 피자, 베스킨라빈스, 편의점 쿠폰을 드립니다.</p>
+		</div>
+		<div class="section03">
+			<h3>지금 바로 투표하세요!</h3>
+			<div class="tab_wapper">
+				<ul>
+					<li class="on"><button type="button">1주차</button></li>
+					<li><button type="button">2주차</button></li>
+					<li><button type="button">3주차</button></li>
+					<li><button type="button">4주차</button></li>
+				</ul>
+			</div>
+			<div id="tab_container" class="movie_vote_wrapper tab_container" data-view="1">
+				<!-- div.content에 voted 클래스를 추가하면 투표가 완료된 스타일이 적용되고, 그 상태에서 closed 클래스를 추가하면 투표 종료 스타일이 적용됩니다. ex) <div class="content voted closed"> -->
+				<div class="content n01">
+					<div class="title_area">
+						<span class="vote_state">투표완료!</span>
+						<em class="event_title">최고의 한국 액션 영화</em>
+						<div class="right_info">
+							<span class="week">1 WEEK</span>
+							<span class="period">5.15 - 5.21</span>
+						</div>
+					</div>
+					<ul class="vote_area">
+						<li>
+							<div class="occupation">
+								<span>50%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie01">
+							<label for="movie01">
+								<div class="poster">
+									<img src="../images/poster_lucky.png" alt="럭키">
+									<span class="ranking">1위</span>
+								</div>
+								<span class="circle"></span>럭키
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>25%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie02">
+							<label for="movie02">
+								<div class="poster">
+									<img src="../images/poster_the_king.png" alt="더 킹">
+									<span class="ranking">2위</span>
+								</div>
+								<span class="circle"></span>더 킹
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>15%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie03">
+							<label for="movie03">
+								<div class="poster">
+									<img src="../images/poster_master.png" alt="마스터">
+									<span class="ranking">3위</span>
+								</div>
+								<span class="circle"></span>마스터
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>10%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie04">
+							<label for="movie04">
+								<div class="poster">
+									<img src="../images/poster_big_tiger.png" alt="대호">
+									<span class="ranking">4위</span>
+								</div>
+								<span class="circle"></span>대호
+							</label>
+						</li>
+					</ul>
+					<div class="btn_area">
+						<button class="yellow_bg">투표하기</button>
+						<button class="navy_bg">공유하면 당첨 기회 UP!</button>
+						<span class="vote_closed">투표가 종료되었습니다.</span>
+					</div>
+				</div>
+				<!-- div.content에 voted 클래스를 추가하면 투표가 완료된 스타일이 적용되고, 그 상태에서 closed 클래스를 추가하면 투표 종료 스타일이 적용됩니다. ex) <div class="content voted closed"> -->
+				<div class="content n02 voted">
+					<div class="title_area">
+						<span class="vote_state">투표완료!</span>
+						<em class="event_title">따뜻한 멜로·드라마</em>
+						<div class="right_info">
+							<span class="week">2 WEEK</span>
+							<span class="period">5.22 - 5.28</span>
+						</div>
+					</div>
+					<ul class="vote_area">
+						<li>
+							<div class="occupation">
+								<span>50%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie01">
+							<label for="movie01">
+								<div class="poster">
+									<img src="../images/poster_lucky.png" alt="럭키">
+									<span class="ranking">1위</span>
+								</div>
+								<span class="circle"></span>뷰티인사이드
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>25%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie02">
+							<label for="movie02">
+								<div class="poster">
+									<img src="../images/poster_the_king.png" alt="더 킹">
+									<span class="ranking">2위</span>
+								</div>
+								<span class="circle"></span>나의 소녀시대
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>15%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie03">
+							<label for="movie03">
+								<div class="poster">
+									<img src="../images/poster_master.png" alt="마스터">
+									<span class="ranking">3위</span>
+								</div>
+								<span class="circle"></span>건축학개론
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>10%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie04">
+							<label for="movie04">
+								<div class="poster">
+									<img src="../images/poster_big_tiger.png" alt="대호">
+									<span class="ranking">4위</span>
+								</div>
+								<span class="circle"></span>님아, 그 강을 건너지 마오
+							</label>
+						</li>
+					</ul>
+					<div class="btn_area">
+						<button class="yellow_bg">투표하기</button>
+						<button class="navy_bg">공유하면 당첨 기회 UP!</button>
+						<span class="vote_closed">투표가 종료되었습니다.</span>
+					</div>
+				</div>
+				<!-- div.content에 voted 클래스를 추가하면 투표가 완료된 스타일이 적용되고, 그 상태에서 closed 클래스를 추가하면 투표 종료 스타일이 적용됩니다. ex) <div class="content voted closed"> -->
+				<div class="content n03 voted closed">
+					<div class="title_area">
+						<span class="vote_state">투표완료!</span>
+						<em class="event_title">최고의 코미디 영화</em>
+						<div class="right_info">
+							<span class="week">3 WEEK</span>
+							<span class="period">5.29 - 6.4</span>
+						</div>
+					</div>
+					<ul class="vote_area">
+						<li>
+							<div class="occupation">
+								<span>50%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie01">
+							<label for="movie01">
+								<div class="poster">
+									<img src="../images/poster_lucky.png" alt="럭키">
+									<span class="ranking">1위</span>
+								</div>
+								<span class="circle"></span>스물
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>25%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie02">
+							<label for="movie02">
+								<div class="poster">
+									<img src="../images/poster_the_king.png" alt="더 킹">
+									<span class="ranking">2위</span>
+								</div>
+								<span class="circle"></span>엽기적인 그녀
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>15%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie03">
+							<label for="movie03">
+								<div class="poster">
+									<img src="../images/poster_master.png" alt="마스터">
+									<span class="ranking">3위</span>
+								</div>
+								<span class="circle"></span>웜바디스
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>10%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie04">
+							<label for="movie04">
+								<div class="poster">
+									<img src="../images/poster_big_tiger.png" alt="대호">
+									<span class="ranking">4위</span>
+								</div>
+								<span class="circle"></span>피 끓는 청춘
+							</label>
+						</li>
+					</ul>
+					<div class="btn_area">
+						<button class="yellow_bg">투표하기</button>
+						<button class="navy_bg">공유하면 당첨 기회 UP!</button>
+						<span class="vote_closed">투표가 종료되었습니다.</span>
+					</div>
+				</div>
+				<!-- div.content에 voted 클래스를 추가하면 투표가 완료된 스타일이 적용되고, 그 상태에서 closed 클래스를 추가하면 투표 종료 스타일이 적용됩니다. ex) <div class="content voted closed"> -->
+				<div class="content n04">
+					<div class="title_area">
+						<span class="vote_state">투표완료!</span>
+						<em class="event_title">더위를 날려줄 공포·스릴러</em>
+						<div class="right_info">
+							<span class="week">4 WEEK</span>
+							<span class="period">6.5 - 6.11</span>
+						</div>
+					</div>
+					<ul class="vote_area">
+						<li>
+							<div class="occupation">
+								<span>50%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie01">
+							<label for="movie01">
+								<div class="poster">
+									<img src="../images/poster_lucky.png" alt="럭키">
+									<span class="ranking">1위</span>
+								</div>
+								<span class="circle"></span>검은 사제들
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>25%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie02">
+							<label for="movie02">
+								<div class="poster">
+									<img src="../images/poster_the_king.png" alt="더 킹">
+									<span class="ranking">2위</span>
+								</div>
+								<span class="circle"></span>해빙
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>15%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie03">
+							<label for="movie03">
+								<div class="poster">
+									<img src="../images/poster_master.png" alt="마스터">
+									<span class="ranking">3위</span>
+								</div>
+								<span class="circle"></span>장화,홍련
+							</label>
+						</li>
+						<li>
+							<div class="occupation">
+								<span>10%</span>
+							</div>
+							<input type="radio" name="first_week" id="movie04">
+							<label for="movie04">
+								<div class="poster">
+									<img src="../images/poster_big_tiger.png" alt="대호">
+									<span class="ranking">4위</span>
+								</div>
+								<span class="circle"></span>더 테러 라이브
+							</label>
+						</li>
+					</ul>
+					<div class="btn_area">
+						<button class="yellow_bg">투표하기</button>
+						<button class="navy_bg">공유하면 당첨 기회 UP!</button>
+						<span class="vote_closed">투표가 종료되었습니다.</span>
+					</div>
+				</div>
+			</div>
+			<div class="register_phone_area">
+				<em>경품 수령 연락처 등록</em>
+				<p>수정 및 변경이 불가하니 등록 전 꼭! 다시 확인해주세요</p>
+				<div class="hp_input_area">
+					<input type="tel" id="hp_input_txt" name="hp_input_txt" class="hp_input" maxlength="11">
+					<label for="hp_input_txt" class="hp_input_txt on">숫자만 입력 가능합니다</label>
+					<div class="btn_wapper">
+						<button type="button" class="btn_hp_confirm">등록</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="event n02 navPosition02">
+		<h2>최대1만원! 윈캐시 캐시백</h2>
+		<p>이벤트 기간 내 횟수 무제한! 최대 1만원</p>
+		<img src="../images/firework.png" alt="폭죽" class="firework">
+		<div class="img_area">
+			<img src="../images/cashback.png" alt="유료영화를 감사하면 캐시백30%">
+		</div>
+		<p>유료영화를 감상하시면<br>유료영화 금액의 30%를 윈캐시로 되돌려드립니다!</p>
+		<div class="btn_area">
+			<a href="#" title="최신영화 보기" class="dark_bg">최신영화 보기</a>
+			<a href="#" title="나의 구매내역" class="dark_line">나의 구매내역</a>
+		</div>
+	</div>
+	<div class="event n03 navPosition03">
+		<h2>행운의 무료영화</h2>
+		<p>무료영화 시청하고 아이패드 획득하세요!</p>
+		<div class="img_area">
+			<img src="../images/gift_free_movie.png" alt="아이패드 1명">
+		</div>
+		<div class="step">
+			<span>경품수령 연락처 입력</span>
+			<span>무료영화 시청</span>
+			<span>별점·댓글남기기</span>
+		</div>
+		<p class="desc_light">이벤트 기간 내 가장 많이 본 영화에 별점·댓글을 남긴 분들 중<br>한 분께 추첨을 통해 아이패드를 드립니다.</p>
+		<div class="btn_area">
+			<a href="#" title="무료영화 보기" class="dark_bg">무료영화 보기</a>
+		</div>
+	</div>
+	<div class="event n04 navPosition04">
+		<h2>매일매일 도전! 룰렛</h2>
+		<p>로그인 하고 한 번! 이벤트 공유하고 한번 더!</p>
+		<!-- [Start] 룰렛 영역 -->
+		<div class="roullete_wrapper">
+			<!-- s :: 룰렛 게임 시작 -->
+			<div class="roulette_game_area">
+				<div class="spin_here">
+					<img src="../images/stop_pointer.png" alt="바늘">
+				</div>
+				<div class="power_controls">
+					<img id="spin_button" src="../images/btn_start.png" alt="룰렛 시작" onclick="startSpin();" class="spin_button">
+				</div>
+				<div class="wheel_border">
+					<img src="../images/border.png">
+				</div>
+				<div width="438" height="582" align="center" valign="center">
+					<canvas id="canvas" width="200" height="200" class="canvas_wheel"></canvas>
+				</div>
+				<!-- 당첨 화면 -->
+				<div class="event_result_area" id="event_result_area"></div>
+				</div><!-- e :: roulette_game_area -->
+				<!-- e :: 룰렛 게임 끝 -->
+			</div>
+			<!-- [End] 룰렛 영역 -->
+			<div class="left_chance">
+				<em class="cross_line"><span class="f-magenta">0</span>회 참여가능</em>
+			</div>
+			<p class="desc_light">로그인만해도 1일 1회 참여 가능!<br>페이스북 공유시, 한번 더 참여 가능합니다.</p>
+			<div class="btn_area">
+				<!-- a.dark_bg에 inactive 클래스를 추가하면 비활성화 스타일로 변합니다. inactive 클래스추가 되면 a 태그 안의 텍스트도 "로그인 완료"로 바뀌어야 합니다 -->
+				<a href="#" title="로그인" class="dark_bg">로그인</a>
+				<a href="#" title="페이스북 공유" class="facebook_bg">공유</a>
+			</div>
+	</div>
+	<div class="notice_area">
+			<div class="contents">
+				<h2>꼭 확인하세요!</h2>
+				<dl>
+					<dt>이벤트 공통</dt>
+					<dd>
+					<ul class="desc_txt">
+						<li>이벤트 기간은 2017.5.15 ~ 6.11 입니다.</li>
+						<li>5만원 이상의 이벤트 경품에 한하여 22%의 제세공과금이 발생합니다.</li>
+						<li>본 이벤트는 로그인 후 참여 가능하며 경품 연락처를 입력하신 분에 </li>
+						<li>한하여 이벤트 참여가 정상적으로 진행됩니다.</li>
+						<li>하나의 계정으로 PC와 모바일 중 한번만 가능하며, 경품 수령 연락처는 1회만 등록 가능합니다.</li>
+						<li>입력하신 전화번호는 개인정보보호법 및 정보통신망법에 따라 안전하게 보관되며, 경품 발송 완료 후 자동파기됩니다.</li>
+						<li>고객님의 정보는 경품 발송 이외에 목적으로 사용되지 않습니다.</li>
+						<li>이벤트 경품은 업체 사정에 따라 별도 고지 없이 변경될 수 있습니다.</li>
+						<li>이벤트를 통해 지급되는 윈캐시는 별도의 취소나 환불이 불가합니다.</li>
+					</ul>
+					</dd>
+					<dt>이벤트 1 - 1 최고의 영화를 찾아라</dt>
+					<dd>
+					<ul class="desc_txt">
+						<li>경품 : 500만원 상당의 모두투어 여행상품권, 300만원 상당의 하이마트 상품권, 뉴 맥북 256GB 각 1명</li>
+						<li>당첨자는 2017.6.22 (목) 발표 예정입니다.</li>
+					</ul>
+					</dd>
+					<dt>이벤트 1 - 2 투표만 해도 터진다</dt>
+					<dd>
+					<ul class="desc_txt">
+						<li>경품 : 도미노피자 슈퍼디럭스M (오리지널) + 콜라 1.25L, 베스킨라빈스 싱글 레귤러, 1천원 편의점 상품권 총 160명</li>
+						<li>당첨자는 매주 화요일 발표 예정입니다. (5.23 / 5.30 / 6.7 / 6.13)</li>
+					</ul>
+					</dd>
+					<dt>이벤트 2 - 최대 1만원 윈캐시 캐시백</dt>
+					<dd>
+					<ul class="desc_txt">
+						<li>이벤트 종료 후 일주일 이내 해당 계정으로 윈캐시 지급 예정입니다.</li>
+						<li>캐시백 포인트는 1인당 최대 1만원까지 지급됩니다.</li>
+					</ul>
+					</dd>
+					<dt>이벤트 3 - 행운의 무료영화</dt>
+					<dd>
+					<ul class="desc_txt">
+						<li>경품 : 아이패드128GB (WiFi) 1명</li>
+						<li>당첨자는 2017.6.22 (목) 발표 예정입니다.</li>
+					</ul>
+					</dd>
+					<dt>이벤트 4 - 매일매일 도전! 룰렛</dt>
+					<dd>
+					<ul class="desc_txt">
+						<li>경품 : 스타벅스 아이스 아메리카노, 편의점 상품권 1천원권, 비타 500 총 600명</li>
+						<li>매주 화요일 주단위 경품 발송 예정입니다. (5.23 / 5.30 / 6.7 / 6.13)</li>
+					</ul>
+					</dd>
+				</dl>
+			</div>
+	</div>
+	<div class="win_contents_area">
+			<h2>윈벤션만의 특별한 콘텐츠</h2>
+			<span class="only_win">ONLY WINVENTION</span>
+			<div class="banner_area">
+				<a href="#" title="마음껏 즐겨라! 윈벤션 무료 영화관" class="banner01">마음껏 즐겨라! 윈벤션 무료 영화관</a>
+				<a href="http://event.winvention.com/SMA26/003" title="입이떡! 엄지척! 꿀텐츠 모음전" class="banner02">입이떡! 엄지척! 꿀텐츠 모음전</a>
+				<a href="http://www.winvention.com/web/chnn/viewChannel/KRWUCHmlKCCymLY/T5" title="윈벤션 오리지널 웹 무비/웹 드라마" class="banner03">윈벤션 오리지널 웹 무비/웹 드라마</a>
+				<a href="http://www.winvention.com/web/wbtn/mainWebtoon/T10" title="윈벤션에서만 볼 수 있는 웹툰" class="banner04">윈벤션에서만 볼 수 있는 웹툰</a>
+			</div>
+			<p>앱 다운로드 받고 즐기세요</p>
+			<div class="store_links">
+				<a href="#" title="구글플레이" class="play_store">구글플레이</a>
+				<a href="#" title="앱스토어" class="appstore">앱스토어</a>
+			</div>
+	</div>
+
+	<script type="text/javascript">
+	//==============
+	// 네비게이션 컨드롤
+	//==============
+	$(function(){
+		var NavHeight = $(".scrollNav").height() - 8; //네비게이션에 after 영역때문에 8을 빼줘야함
+		var navLists = $(".scrollNav ul li");
+		var stickyAfter = $(".main_visual").height();
+
+		var section01 = $(".navPosition01").offset().top - NavHeight;
+		var section02 = $(".navPosition02").offset().top - NavHeight;
+		var section03 = $(".navPosition03").offset().top - NavHeight;
+		var section04 = $(".navPosition04").offset().top - NavHeight;
+		var deactiveSection = $(".notice_area").offset().top - NavHeight;
+
+
+		$(window).scroll(function(){
+			if($(window).scrollTop() >= stickyAfter){
+				$('.scrollNav').addClass('fixed');
+			} else{
+				$('.scrollNav').removeClass('fixed');
+			}
+
+			if($(window).scrollTop() > section01 && $(window).scrollTop() <= section02){
+				navLists.removeClass('on');
+				navLists.eq(0).addClass('on');
+			} else if($(window).scrollTop() > section02 && $(window).scrollTop() <= section03){
+				navLists.removeClass('on')
+				navLists.eq(1).addClass('on');
+			} else if($(window).scrollTop() > section03 && $(window).scrollTop() <= section04){
+				navLists.removeClass('on')
+				navLists.eq(2).addClass('on');
+			} else if($(window).scrollTop() > section04 && $(window).scrollTop() <= deactiveSection){
+				navLists.removeClass('on')
+				navLists.eq(3).addClass('on');
+			} else {
+				navLists.removeClass('on')
+			}
+
+		});
+
+		navLists.click(function() {
+			var $this = $(this);
+			var index = $this.index();
+
+			var offsetTop = $(".navPosition0"+(index+1)).offset().top - NavHeight + 1;
+
+			navLists.removeClass('on');
+			$this.addClass('on');
+
+			$('html, body').animate({
+				scrollTop: offsetTop
+			}, 500);
+
+			return false;
+		});
+
+	});
+
+		//==============
+		// 탭 컨트롤
+		//==============
+		var tab_list = $('.tab_wapper ul li');
+
+		tab_list.on('click', function(){
+			tab_list.removeClass('on');
+			$(this).addClass('on');
+			$('#tab_container').attr('data-view', $(this).index() + 1);
+		});
+
+
+		//==============
+		// 룰렛
+		//==============
+		var doc = document;
+		var event_result_area = doc.getElementById('event_result_area');
+
+		// 객체생성
+		var theWheel = new Winwheel({
+			'numSegments'  : 4,     // 룰렛 이벤트 갯수 설정
+			'outerRadius'  : 212,   // 이벤트 바깥 라인 radius 디자인에 따라 설정 변경 가능
+			'textFontSize' : 13,    // 폰트 사이즈 설정
+			'drawMode'     : 'segmentImage',
+			'segments'     :        // 개체 설정
+			[
+				{'strokeStyle' : '#fff' ,'image' : '../images/slice_01.png', 'text' : 'starbucks'},
+				{'strokeStyle' : '#fff' ,'image' : '../images/slice_02.png', 'text' : 'vita500'},
+				{'strokeStyle' : '#fff' ,'image' : '../images/slice_03.png', 'text' : 'fail'},
+				{'strokeStyle' : '#fff' ,'image' : '../images/slice_04.png', 'text' : 'coupon'}
+			],
+			'animation' :           // 애니메이션 스펙 설정
+			{
+				'type'     : 'spinToStop',
+				'duration' : 4,     // 시간 설정 (second)
+				'spins'    : 10,     // 스핀 수
+				'callbackFinished' : 'popupDuration()' //alert 설정
+			}
+		});
+
+		//초기화 변수
+		var wheelPower    = 0;
+		var wheelSpinning = false;
+
+		// 이벤트 호출
+		function startSpin() {
+			document.querySelector('.power_controls').classList.add('bg_off'); //모바일에서 룰렛의 이미지가 흐려서 추가
+			//  회전중일때 다시 클릭할 수 없게 하도록 false를 줌
+			if (wheelSpinning == false){
+				if (wheelPower == 1){
+				} else if (wheelPower == 2){
+					theWheel.animation.spins = 8;
+				} else if (wheelPower == 3){
+					theWheel.animation.spins = 15;
+				}
+				// 스핀이 도는 동안 다시 클릭 할 수 없도록 비활성화.
+				document.getElementById('spin_button').className = "";
+				// 애니메이션 호출
+				theWheel.startAnimation();
+				//스핀을 재 설정을 위한 변수
+				wheelSpinning = true;
+			}
+		}
+
+		// 매개 변수에서 콜백을 지정했기 때문에 휠의 콜백 기능으로 스핀 애니메이션이 완료되면 호출됨
+		function alertPrize(){
+			// 세그먼트 호출
+			var winningSegment = theWheel.getIndicatedSegment();
+			// console.log("winningSegment : ", winningSegment);
+
+		var event_result01 = "" ;
+			event_result01 += "<div class='upper_area'><img src='../images/coupon.png' alt='cu 상품권 1000원' class='coupon'><p>축하합니다!<br>편의점 1천원 상품권 당첨</p></div>";
+			event_result01 += "<div class='lower_area'><button type='button' id='btn_result_ok'>확인</button></div>";
+
+		var event_result02 = "";
+			event_result02 += "<div class='upper_area'><img src='../images/starbucks.png' alt='스타벅스 기프티콘' class='starbucks'><p>축하합니다!<br>스타벅스 기프티콘 당첨</p></div>";
+			event_result02 += "<div class='lower_area'><button type='button' id='btn_result_ok'>확인</button></div>";
+
+		var event_result03 = "";
+			event_result03 += "<div class='upper_area'><img src='../images/vita500.png' alt='GS25 비타500'  class='starbucks'><p>축하합니다!<br>GS25 비타500 당첨</p></div>";
+			event_result03 += "<div class='lower_area'><button type='button' id='btn_result_ok'>확인</button></div>";
+
+		var event_result04 = "";
+			event_result04 += "<div class='upper_area no_bg'><span class='lot'>SORRY</span><p>실망하지 마세요.!<br>내일 또 도전 할 수 있습니다!</p></div>";
+			event_result04 += "<div class='lower_area'><button type='button' id='btn_result_ok'>확인</button></div>";
+
+
+		if (winningSegment.text == 'coupon'){
+			event_result_area.className = "event_result_area on";
+			event_result_area.innerHTML = event_result01;
+		} else if (winningSegment.text == 'starbucks') {
+			event_result_area.className = "event_result_area on";
+			event_result_area.innerHTML = event_result02;
+		} else if (winningSegment.text == 'vita500'){
+			event_result_area.className = "event_result_area on";
+			event_result_area.innerHTML = event_result03;
+		} else if (winningSegment.text == 'fail'){
+			event_result_area.className = "event_result_area on";
+			event_result_area.innerHTML = event_result04;
+		}
+
+		var btn_result_ok = doc.getElementById('btn_result_ok');
+
+		btn_result_ok.onclick = function(){
+			document.querySelector('.power_controls').classList.remove('bg_off'); //모바일에서 룰렛의 이미지가 흐려서 추가
+			event_result_area.className = "event_result_area";
+			resetWheel();
+		}
+	}
+
+		// 상품 호출 타임아웃 지정
+		function popupDuration() {
+			setTimeout(alertPrize, 300);
+		}
+
+		// reset button.
+		function resetWheel(){
+			theWheel.stopAnimation(false);	// 애니메이션 멈춤
+			theWheel.rotationAngle = 0;		// 휠 각도를 다시 0으로 맞춤
+			theWheel.draw();
+
+			wheelSpinning = false;	// 전원 버튼을 false로 재 설정하면 스핀을 다시 클릭 할 수 있음
+		}
+
+
+
+		//==============
+		// 인풋 요소
+		//==============
+		var hp_input_txt = document.getElementById('hp_input_txt');
+
+		hp_input_txt.onfocus = function(){
+			var label_txt = document.querySelector('.hp_input_area label');
+			label_txt.className = "hp_input_txt";
+		}
+
+		hp_input_txt.onblur = function(){
+			var txtBox = document.querySelector('.hp_input');
+			var label_txt = document.querySelector('.hp_input_area label');
+			if(txtBox.value == ''){
+				label_txt.className = "hp_input_txt on";
+			} else {
+				label_txt.className = "hp_input_txt";
+			}
+		}
+	</script>
+
+
+	</body>
+	</html>
